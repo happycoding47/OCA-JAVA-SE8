@@ -1,0 +1,23 @@
+// Overloaded constructors
+public class Test{
+	String name;
+	Test(String name){
+		this.name = name;
+	}
+	Test(){
+		this(makeRandomName());
+	}
+	static String makeRandomName() {
+		int x = (int)(Math.random() * 3);
+		String name = new String[] {"A", "B","C"}[x];
+		return name;
+	}
+	public static void main(String[] args) {
+		Test a = new Test();
+		System.out.println(a.name);
+		Test b = new Test("D");
+		System.out.print(b.name);
+	}
+}
+
+
