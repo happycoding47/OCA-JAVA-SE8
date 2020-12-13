@@ -1,0 +1,34 @@
+public class Propagate {
+	public static String reverse(String arg) throws Exception {
+		if(arg.length() == 0) {
+			throw new Exception();
+		}
+		String s = "";
+		for(int i = arg.length() - 1; i >=0; i--) {
+			s += arg.charAt(i);
+		}
+		System.out.print(s);
+		return s;		
+	}
+	public static void main(String[] args) {
+		try {
+			reverse("");
+		}catch(Exception e){
+			System.out.println("caught");
+			e.printStackTrace();
+		}finally {
+			System.out.print("done");
+		}
+
+	}
+
+}
+
+
+
+output:
+caught
+java.lang.Exception
+	at Propagate.reverse(Propagate.java:5)
+	at Propagate.main(Propagate.java:16)
+done
